@@ -36,7 +36,8 @@ Um die Webseite erfolgreich zu starten und zu testen, folgen Sie bitte den unten
 
 5. Zugriff auf die Webseite
     - Sobald das Frontend gestartet ist, wird ein Link im Terminal angezeigt. Über diesen können Sie die Webseite im Browser öffnen und verwenden.
-
+    WICHTIG: Aus Sicherheitsgründen konnten wir die PayPal-Informationen nicht im Backend auf GitHub hinterlegen.
+             Daher wird der Zahlungsprozess über PayPal fehlschlagen, da der aktive PayPal-Schlüssel im Backend nicht vorhanden ist.
 
 6. Beendung der Webseite
     Frontend:
