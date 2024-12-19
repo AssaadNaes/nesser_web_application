@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/pages/profile.css">
+    <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/images/eagle.png">
+    <title>Profile - Nesser</title>
+</head>
+
+<body>
+    <form action="submit" id="address-form">
+        <input id="country-input" type="text" placeholder="country" maxlength="30" required>
+        <input id="city-input" type="text" placeholder="city" maxlength="30" required>
+        <input id="plz-input" type="text" placeholder="PLZ" maxlength="15" required>
+        <input id="street-input" type="text" placeholder="street" maxlength="50" required>
+        <input id="phone-input" type="number" placeholder="phone number" maxlength="30" required>
+        <div class="management-buttons">
+            <button id="save-button" class="default">save changes</button>
+            <button id="delete-button" type="button" class="default">delete account</button>
+        </div>
+    </form>
+
+    <dialog id="submit-delete">
+        <h1>Your account will be <b style="color: #d90429">DELETED!</b></h1>
+        <p id="failure-msg" aria-live="assertive"></p>
+        <div class="buttons-container">
+            <button type="button" id="cancle-button" class="default">Cancel</button>
+            <button type="submit" id="submit-button" class="default">Delete</button>
+        </div>
+    </dialog>
+
+    <div id="saving-msg-container">
+        <p id="saving-msg">Saved changes</p>
+    </div>
+
+    <script type="module" src="../js/profile/profile-service.mjs"></script>
+    <script type="module" src="../js/profile/address.mjs"></script>
+    <script type="module" src="../js/auth/delete-account.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  postgres-database:
+    image: 'postgres:17.0'
+    environment:
+      - 'POSTGRES_DB=nesser'
+      - 'POSTGRES_USER=nesserUser'
+      - 'POSTGRES_PASSWORD=nesserPass'
+    ports:
+      - '5432:5432'
+    container_name: database
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nesser_network
+
+  spring-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres-database
+    environment:
+      SPRING.APPLICATION.NAME: nesser
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-database:5432/nesser
+      SPRING_DATASOURCE_USERNAME: nesserUser
+      SPRING_DATASOURCE_PASSWORD: nesserPass
+    container_name: spring-api
+    networks:
+      - nesser_network
+
+volumes:
+  postgres_data:
+
+networks:
+  nesser_network:

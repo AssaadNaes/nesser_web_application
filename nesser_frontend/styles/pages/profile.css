@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--lrp-background-color);
+}
+
+/*=============================================
+=   message dialog on updating information    =
+=============================================*/
+
+@keyframes saving-msg-opacity {
+    0% {
+        opacity: 0;
+    }
+    40%, 70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#saving-msg-container {
+    animation: 1.5s saving-msg-opacity;
+
+    display: none;
+    position: fixed;
+    justify-content: center;
+    bottom: 20px;
+    width: 100%;
+
+    & #saving-msg {
+        font-size: 1.4rem;
+        padding: 20px;
+        border-radius: 15px;
+
+        color: #fff;
+        background-color: #026d02;
+        box-shadow: 0px 0px 10px #0ab90a;
+    }
+}
+
+/*=====  End of message dialog  ======*/
+
+
+/*=============================================
+=              information form               =
+=============================================*/
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 80%;
+    margin: auto;
+    padding: 15px;
+    border-radius: 15px;
+
+    color: #fff;
+    background-color: var(--lrp-form-color);
+    box-shadow: 0px 0px 20px #4f8cbb;
+
+    & .management-buttons {
+        margin-block: 20px;
+        display: flex;
+    }
+}
+
+/*=====  End of information form  ======*/
+
+
+
+/*=============================================
+=            submit deletion modal            =
+=============================================*/
+#submit-delete {
+    max-width: 80%;
+
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+    
+    border: 0;
+    border-radius: 20px;
+
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+    box-shadow: 0px 0px 10px #4f8cbb;
+
+    & .buttons-container {
+        display: flex;
+        justify-content: center;
+
+        margin-block: 30px;
+
+        & button {
+            width: 50%;
+        }
+    }
+}
+
+#submit-delete::backdrop {
+    background-color: rgb(0 0 0 / .7);
+}
+
+/*=====  End of submit deletion modal  ======*/
+
+
+@media only screen and (min-width: 1100px) {
+    form {
+        width: 50%;
+    }
+}

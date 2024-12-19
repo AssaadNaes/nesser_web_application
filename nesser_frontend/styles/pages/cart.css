@@ -1,0 +1,161 @@
+
+/*=============================================
+=                 SMALL VIEWS                 =
+=============================================*/
+/*=============================================
+=               products view                 =
+=============================================*/
+
+#products-list {
+    list-style: none;
+
+    & .product {
+        margin-top: 25px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & img {
+            width: 250px;
+        }
+
+        & .management-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        
+            margin-inline: 15px;
+        
+            & input {
+                width: 70px;
+                text-align: center;
+                background-color: var(--input-2-background-color);
+            }
+
+            & button {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+
+/*=====  End of products view  ======*/
+
+
+
+/*=============================================
+=                   checkout                  =
+=============================================*/
+#checkout {
+    background-color: var(--darker-background-color);
+
+    & #cart-information {
+        padding: 25px;
+        font-size: 1.2rem;
+
+        & .header {
+            color: var(--gold-orange-color);
+            margin-bottom: 20px;
+        }
+
+        & p {
+            color: #fefae0;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        & p.note {
+            font-size: 1.3rem;
+            color: rgb(241, 0, 0);
+        }
+    }
+
+    & #paypal-button-container {
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+
+        & .address-button {
+            color: white;
+            margin-inline: 0;
+            margin-bottom: 14px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+    }
+}
+/*=====  End of cart-information view  ======*/
+/*=====  End of small views  ======*/
+
+@media only screen and (min-width: 700px){
+    #products-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        & .product {
+            width: 45%;
+
+            & img {
+                width: 300px;
+            }
+    
+            & .product-description {
+                & h1 {
+                    font-size: 2.5rem;
+                }
+    
+                & p {
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+
+    #checkout {
+        & #paypal-button-container {
+            width: 85%;
+            margin: auto;
+
+            & .address-button {
+                height: 40px;
+                max-width: 718px;
+                font-size: 1.3rem;
+                align-content: center;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1100px){
+    .cart {
+        display: flex;
+
+        & #products-list {
+            width: 65%;
+            & .product {
+                height: 500px;
+            }
+        }
+
+        & #checkout {
+            right: 0px;
+            position: fixed;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            width: 35%;
+            height: 100vh;
+            
+            & #paypal-button-container {
+                margin: 20px;
+                width: auto;
+            }
+        }
+    }
+
+}

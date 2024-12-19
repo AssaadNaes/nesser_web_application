@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-inline: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 15px;
+    color: var(--gold-orange-color);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1100px) {
+    body {
+        font-size: 1.7rem;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="High performanced pc components for best prices">
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/product-card.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/pages/index-home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/images/eagle.png">
+    <title>Nesser</title>
+</head>
+
+<body>
+    <main class="welcome-view">   
+        <header>
+            <div class="logo">
+                <img src="images/eagle.png" alt="eagle icon" width="70px">
+            </div>
+            <div class="navigation">
+                <a href="pages/login.html" class="default cart navigation-buttons">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Cart
+                </a>
+                <a href="pages/login.html" class="default log-in navigation-buttons">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    Login
+                </a>
+                <a href="pages/register.html" class="default register navigation-buttons">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Register
+                </a>
+            </div>
+        </header>
+        
+        <section class="about-us">
+            <h1>NESSER</h1>
+            <p><strong>The</strong> home of pc components</p>
+            <p>We offer best prices <strong>worldwide</strong></p>
+            <a class="default" href="#search">Discover our products</a>
+        </section>
+    
+        <div class="images-slide-container">
+            <div class="images-slide">
+                <img src="/images/gpu.png">
+                <img src="/images/keyboard-and-mouse.png">
+                <img src="/images/monitor-screen.png">
+                <img src="/images/motherboard.png">
+                <img src="/images/ram.png">
+                <img src="/images/ssd.png">
+                <img src="/images/usb-stick.png">
+    
+                <img src="/images/gpu.png">
+                <img src="/images/keyboard-and-mouse.png">
+                <img src="/images/monitor-screen.png">
+                <img src="/images/motherboard.png">
+                <img src="/images/ram.png">
+                <img src="/images/ssd.png">
+                <img src="/images/usb-stick.png">
+            </div>
+        </div>
+    </main>
+    
+    <div id="search">
+        <input type="text" id="search-input" placeholder="search..">
+        <i class="icon fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <section id="products-container">
+    </section>
+
+    <footer>
+        <a href="https://www.instagram.com/asaadnaes" 
+        class="fa-brands fa-instagram" 
+        target="_blank"> Contact us</a>
+    </footer>
+    
+    <script type="module" src="./js/products/products-service.mjs"></script>
+    <script type="module" src="./js/products/products-generator.mjs"></script>
+    <script type="module" src="js/home/index.mjs"></script>
+</body>
+</html>

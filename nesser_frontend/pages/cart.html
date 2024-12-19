@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/reset.css">
+        <link rel="stylesheet" href="../styles/global.css">
+        <link rel="stylesheet" href="../styles/spinner.css">
+        <link rel="stylesheet" href="../styles/product-card.css">
+        <link rel="stylesheet" href="../styles/pages/cart.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+
+        <link rel="icon" href="../images/eagle.png">
+        <title>Cart - Nesser</title>
+    </head>
+
+    <body>
+        <div class="cart">
+            <ul id="products-list">
+            </ul>
+            
+            <div id="checkout">
+                <div id="cart-information">
+                </div>
+
+                <div id="paypal-button-container" class="paypal-button-container">
+                    <a href="./profile.html" class="default address-button">Shipping address</a>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://www.paypal.com/sdk/js?client-id=%PAYPAL_CLIENT_ID%&buyer-country=DE&currency=EUR&components=buttons&enable-funding=paylater,card&disable-funding=venmo"
+        data-sdk-integration-source="developer-studio"></script>
+        <script type="module" src="../js/paypal/paypal.mjs"></script>
+        <script type="module" src="../js/cart/cart-service.mjs"></script>
+        <script type="module" src="../js/cart/cart-generator.mjs"></script>
+    </body>
+</html>

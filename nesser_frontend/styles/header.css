@@ -1,0 +1,53 @@
+header {
+    user-select: none;
+
+    & .logo {
+        font-size: 1.4rem;
+        text-align: center;
+        border-bottom: 1px solid;
+        margin-inline: 1.2rem;
+    }
+
+    & .navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px auto auto;
+    }
+
+    & .fa-solid {
+        margin-right: .3rem;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    header {
+        & .logo {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    header {
+        width: 75%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+
+        & .logo {
+            font-size: 2rem;
+            text-align: left;
+            border-bottom: none;
+            margin-inline: 0;
+            margin-top: 10px;
+        }
+
+        & .navigation {
+            margin: 0;
+            display: block;
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
+    }
+}
