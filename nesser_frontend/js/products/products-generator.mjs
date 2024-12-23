@@ -13,7 +13,7 @@ function attachSearchHandler() {
     attachEvenet("search-input", "keydown", async event => {
         if (event.key === "Enter") {
             if (element.value.trim() === ""){
-                generateProducts(await getProducts());
+                generateProducts();
             } else {
                 const productsByName = await getByName(element.value);
                 generateProducts(productsByName);
@@ -66,7 +66,8 @@ function getProductHTML({ product_id, image_url, name, description, price }) {
     `;
 }
 
-function generateProducts(products) {
+async function generateProducts() {
+    const products = await getProducts()
     const container = document.getElementById("products-container");
     container.innerHTML = "";
     
@@ -81,4 +82,4 @@ function generateProducts(products) {
 }
 
 attachSearchHandler();
-generateProducts(await getProducts());
+generateProducts();
