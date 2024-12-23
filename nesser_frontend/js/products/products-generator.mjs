@@ -4,13 +4,16 @@ import { isLoggedIn, attachEvenet, attachEventAll } from "../utils.mjs";
 const LOGIN_PAGE = "../../pages/login.html";
 const username = localStorage.getItem("username");
 
-let products = await getAll();
+async function getProducts() {
+    let products = await getAll();
+    return products;
+}
 
 function attachSearchHandler() {
     attachEvenet("search-input", "keydown", async event => {
         if (event.key === "Enter") {
             if (element.value.trim() === ""){
-                generateProducts(products);
+                generateProducts(await getProducts());
             } else {
                 const productsByName = await getByName(element.value);
                 generateProducts(productsByName);
@@ -78,4 +81,4 @@ function generateProducts(products) {
 }
 
 attachSearchHandler();
-generateProducts(products);
+generateProducts(await getProducts());
