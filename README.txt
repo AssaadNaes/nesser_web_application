@@ -7,9 +7,12 @@ Um die Webseite erfolgreich zu starten und zu testen, folgen Sie bitte den unten
         - Starten Sie anschließend die Docker Desktop-Anwendung.
         
     Node Package Manager (npm) installieren
-        - Installieren Sie npm, indem Sie diesen Link "https://nodejs.org/en/download/prebuilt-installer" verwenden.
+        - Laden Sie npm, über diesen Link "https://nodejs.org/en/download/prebuilt-installer" herunter und installieren Sie es auf Ihrem lokalen Gerät.
         - Wählen Sie den Prebuilt-Installer-Option und selektieren Sie Ihre Betriebssystem
         - Klicken Sie auf download und installieren Sie es auf Ihrem lokalen Gerät
+
+    Git installieren
+        - Laden Sie git, über diesen Link "https://git-scm.com/downloads" herunter und installieren Sie es auf Ihrem lokalen Gerät.
 
 
 2. Projekt einrichten
