@@ -1,5 +1,5 @@
 import { getAll, getByName, addItemToCart } from "./products-service.mjs";
-import { isLoggedIn, attachEvenet, attachEventAll } from "../utils.mjs";
+import { isLoggedIn, attachEventAll } from "../utils.mjs";
 
 const LOGIN_PAGE = "../../pages/login.html";
 const username = localStorage.getItem("username");
@@ -10,13 +10,16 @@ async function getProducts() {
 }
 
 function attachSearchHandler() {
-    attachEvenet("search-input", "keydown", async event => {
+    const element = document.getElementById("search-input");
+    element.addEventListener("keydown", async event => {
         if (event.key === "Enter") {
             if (element.value.trim() === ""){
                 generateProducts();
             } else {
                 const productsByName = await getByName(element.value);
-                generateProducts(productsByName);
+                console.log(productsByName);
+                
+                generateProducts(true, productsByName);
             }
         }
     });
@@ -66,8 +69,10 @@ function getProductHTML({ product_id, image_url, name, description, price }) {
     `;
 }
 
-async function generateProducts() {
-    const products = await getProducts()
+async function generateProducts(search = false, products = []) {
+    if (!search) {
+        products = await getProducts()
+    }
     const container = document.getElementById("products-container");
     container.innerHTML = "";
     
