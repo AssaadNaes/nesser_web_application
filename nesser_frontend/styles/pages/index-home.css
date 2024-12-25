@@ -81,13 +81,17 @@
         box-shadow: 0px 0px 15px #3765a5;
     }
 
-    & .icon {
+    & #search-button {
         position: absolute;
         right: 10px;
         top: 50%;
         transform: translateY(-50%);
-        color: #219ebc;
         font-size: 1.5rem;
+        border: none;
+
+        & i {
+            color: #9edae9;
+        }
     }
 }
 

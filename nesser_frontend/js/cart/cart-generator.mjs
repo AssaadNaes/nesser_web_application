@@ -3,6 +3,7 @@ import { isLoggedIn, attachEventAll } from "../utils.mjs";
 
 const LOGIN_PAGE = "../../pages/login.html";
 const username = localStorage.getItem("username");
+const spinner = document.getElementById("spinner");
 
 if (!isLoggedIn()) {
     window.location.href = LOGIN_PAGE;
@@ -18,8 +19,10 @@ function validateInput(inputElement) {
 }
 
 function quantityEventListeners() {
-    attachEventAll(".quantity-input", "input", event => validateInput(event.target));
-    attachEventAll(".quantity-input", "change", async event => {
+    const inputName = ".quantity-input";
+    attachEventAll(inputName, "focus", event => {event.target.select()});
+    attachEventAll(inputName, "input", event => validateInput(event.target));
+    attachEventAll(inputName, "change", async event => {
         let inputElement = event.target;
         if (inputElement.value <= "0" || inputElement.value === "") {
             inputElement.value = "1";
@@ -104,4 +107,5 @@ async function generateCheckout() {
 document.addEventListener("DOMContentLoaded", () => {
     generateProducts();
     generateCheckout();
+    spinner.style.display = "none";
 });

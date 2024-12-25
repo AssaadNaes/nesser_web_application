@@ -1,5 +1,5 @@
 import { getAll, getByName, addItemToCart } from "./products-service.mjs";
-import { isLoggedIn, attachEventAll } from "../utils.mjs";
+import { isLoggedIn, attachEvenet, attachEventAll } from "../utils.mjs";
 
 const LOGIN_PAGE = "../../pages/login.html";
 const username = localStorage.getItem("username");
@@ -10,19 +10,26 @@ async function getProducts() {
 }
 
 function attachSearchHandler() {
-    const element = document.getElementById("search-input");
-    element.addEventListener("keydown", async event => {
+    const search = async (element) => {
+        if (element.value.trim() === ""){
+            generateProducts();
+        } else {
+            const productsByName = await getByName(element.value);
+            generateProducts(true, productsByName);
+        }
+    };
+
+    attachEvenet("search-input", "keydown", async event => {
+        const element = event.target;
         if (event.key === "Enter") {
-            if (element.value.trim() === ""){
-                generateProducts();
-            } else {
-                const productsByName = await getByName(element.value);
-                console.log(productsByName);
-                
-                generateProducts(true, productsByName);
-            }
+            search(element);
         }
     });
+
+    attachEvenet("search-button", "click", async () => {
+        const element = document.getElementById("search-input");
+        search(element);
+    })
 }
 
 function attachButtonHandler() {

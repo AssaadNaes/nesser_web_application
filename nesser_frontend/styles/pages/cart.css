@@ -1,7 +1,21 @@
-
 /*=============================================
 =                 SMALL VIEWS                 =
 =============================================*/
+
+/*=============================================
+=                Loading spinner              =
+=============================================*/
+
+#spinner {
+    display: block;
+    top: 50%; /* Pushes the div down 50% of the viewport height */
+    left: 50%; /* Pushes the div right 50% of the viewport width */
+    transform: translate(-50%, -50%); /* Adjusts the div to center itself perfectly */
+}
+
+/*=====  End of Loading spinner  ======*/
+
+
 /*=============================================
 =               products view                 =
 =============================================*/
