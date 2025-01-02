@@ -212,7 +212,7 @@
 =                LARGE VIEWS                 =
 =============================================*/
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1550px) {
     .welcome-view {
         height: 100vh;
     }
