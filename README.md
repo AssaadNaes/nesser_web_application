@@ -3,7 +3,7 @@
 ## Project Overview
 Nesser Online Shop is a modern e-commerce platform developed as a formal school project. The application features a robust and secure architecture, utilizing **Spring Boot** and **Spring Security** for the backend services. The frontend is built entirely with **pure JavaScript, HTML5, and CSS** without the use of external frameworks.
 
-To ensure a seamless setup and evaluation experience, the entire application—including the database—is fully **dockerized**. This allows for consistent deployment and simplified local testing across any environment.
+To ensure a seamless setup and evaluation experience, the entire application including the database is fully **dockerized**. This allows for consistent deployment and simplified local testing across any environment.
 
 ---
 
