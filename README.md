@@ -35,8 +35,8 @@ Um die Webseite erfolgreich zu starten und zu testen, folgen Sie bitte den unten
 4. Frontend starten
     - Wechseln Sie in das Verzeichnis nesser_frontend
     - Führen Sie die folgenden Befehle aus:
-    npm install
-    npm run start
+    > npm install
+    > npm run start
 
 
 5. Zugriff auf die Webseite
